@@ -2,7 +2,10 @@
 
 console.log('hello');
 
-// JSX Javascript XML (syntax extension)
+var app = {
+    title: 'Indecision App!',
+    subtitle: 'Let the computer decide for you!'
+};
 
 var template = React.createElement(
     'div',
@@ -10,12 +13,12 @@ var template = React.createElement(
     React.createElement(
         'h1',
         null,
-        'My name is Eric Bouvier'
+        app.title
     ),
     React.createElement(
         'p',
         null,
-        'I am learning React because I love it!'
+        app.subtitle
     ),
     React.createElement(
         'ol',
@@ -33,8 +36,15 @@ var template = React.createElement(
     )
 );
 
-// Create your own template and render it templateTwo
-// root div, then h1 name, p age, p location
+var user = {
+    name: 'Eric',
+    age: '26',
+    location: 'Indy'
+};
+
+var userName = 'Eric';
+var age = 26;
+var myLocation = 'Indianapolis, Indiana';
 
 var templateTwo = React.createElement(
     'div',
@@ -42,20 +52,23 @@ var templateTwo = React.createElement(
     React.createElement(
         'h1',
         null,
-        'My name is Eric Bouvier'
+        'Name: ',
+        user.name
     ),
     React.createElement(
         'p',
         null,
-        'I am 26 years old.'
+        'Age: ',
+        user.age
     ),
     React.createElement(
         'p',
         null,
-        'I live in Indianapolis, Indiana.'
+        'Location: ',
+        user.location
     )
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

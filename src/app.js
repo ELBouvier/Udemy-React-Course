@@ -1,11 +1,14 @@
 console.log('hello')
 
-// JSX Javascript XML (syntax extension)
+let app = {
+title: 'Indecision App!',
+subtitle: 'Let the computer decide for you!'
+};
 
 let template = (
     <div>
-        <h1>My name is Eric Bouvier</h1>
-        <p>I am learning React because I love it!</p>
+        <h1>{app.title}</h1>
+        <p>{app.subtitle}</p>
         <ol>
             <li>so much</li>
             <li>so so much</li>
@@ -13,17 +16,24 @@ let template = (
     </div>
 );
 
-// Create your own template and render it templateTwo
-// root div, then h1 name, p age, p location
+var user = {
+    name: 'Eric',
+    age: '26',
+    location: 'Indy'
+}
 
-let templateTwo = (
+var userName = 'Eric';
+var age = 26;
+var myLocation = 'Indianapolis, Indiana';
+
+var templateTwo = (
     <div>
-        <h1>My name is Eric Bouvier</h1>
-        <p>I am 26 years old.</p>
-        <p>I live in Indianapolis, Indiana.</p>
+        <h1>Name: {user.name}</h1>
+        <p>Age: {user.age}</p>
+        <p>Location: {user.location}</p>
     </div>
-)
+);
 
 let appRoot = document.getElementById('app')
 
-ReactDOM.render(templateTwo, appRoot)
+ReactDOM.render(template, appRoot)
