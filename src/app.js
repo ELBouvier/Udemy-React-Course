@@ -24,16 +24,21 @@ var user = {
 
 var userName = 'Eric';
 var age = 26;
-var myLocation = 'Indianapolis, Indiana';
+
+var locationCheck = (location) => {
+    if(location) {
+        return <p>Location: {location}</p>; 
+    }
+}
 
 var templateTwo = (
     <div>
-        <h1>Name: {user.name}</h1>
-        <p>Age: {user.age}</p>
-        <p>Location: {user.location}</p>
+        <h1>{user.name ? user.name : 'Anonymous'}</h1>
+        <p>{user.age >= 20 ? 'Age:' + user.age : 'Too young.'}</p>
+        {locationCheck(user.location)}
     </div>
 );
 
 let appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot)
